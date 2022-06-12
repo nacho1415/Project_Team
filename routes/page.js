@@ -18,8 +18,8 @@ router.get('/page4', (req, res) => {
     res.render('page4', { title: '데이터 전달 가능' });
 });
 
-router.get('/page5', (req, res) => {
-    res.render('page5', { title: '데이터 전달 가능' });
+router.get('/', (req, res) => {
+    res.render('main', { title: '데이터 전달 가능' });
 });
 
 
