@@ -1,0 +1,11 @@
+.form_wrap{width: 100%;height: 100vh; background: #EBF6FF;}
+.form_wrap .container{max-width: 1110px; height: 100%; margin: 0 auto; display: flex; justify-content: center; align-items: center;}
+
+.form{}
+.form ul{}
+.form ul li{}
+.form ul li input{width: 340px;height: 50px; padding: 0 20px; font-size: 15px; color: #313538; box-sizing: border-box;}
+.form ul li:nth-child(2) input{margin-top: -1px;}
+.form ul li input:focus {outline:none;}
+
+.form button{width: 340px;height: 50px;}
