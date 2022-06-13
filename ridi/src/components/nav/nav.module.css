@@ -1,0 +1,12 @@
+.nav{width: 100%;height: 40px;}
+.nav .container{max-width: 1110px; margin: 0 auto; display: flex; justify-content: space-between;}
+
+.left_menu{}
+.left_menu ul{}
+.left_menu ul li{}
+.left_menu ul li em{}
+
+.right_menu{}
+.right_menu ul{}
+.right_menu ul li{}
+.right_menu ul li em{}
