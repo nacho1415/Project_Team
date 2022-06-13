@@ -1,11 +1,32 @@
 .form_wrap{width: 100%;height: 100vh; background: #EBF6FF;}
-.form_wrap .container{max-width: 1110px; height: 100%; margin: 0 auto; display: flex; justify-content: center; align-items: center;}
+.form_wrap .container{max-width: 1110px; margin: 0 auto; display: flex; justify-content: center; }
+
+.header{width: 100%;height: 40px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #ddd; margin-bottom: 80px;}
+.header h2{color: #1F8CE6; font-size:20px; font-weight: bold; cursor: pointer;}
 
 .form{}
-.form ul{}
-.form ul li{}
-.form ul li input{width: 340px;height: 50px; padding: 0 20px; font-size: 15px; color: #313538; box-sizing: border-box;}
-.form ul li:nth-child(2) input{margin-top: -1px;}
-.form ul li input:focus {outline:none;}
+.login_wrap{width: 340px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;}
+.login ul li input{width: 100%;height: 50px; padding: 0 20px; font-size: 15px; border: none; border-bottom: 1px solid #ccc; color: #313538; box-sizing: border-box;}
+.login ul li input:focus {outline:none;}
+.login ul li input:first-child{border-radius: 5px 5px 0 0;}
 
-.form button{width: 340px;height: 50px;}
+.sub_login{width: 340px;height: 45px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-sizing: border-box;}
+.sub_login ul{}
+.sub_login ul li{}
+.sub_login ul li:first-child{display: flex; align-items: center; }
+.sub_login ul li .checkbox{width: 17px;height: 17px; cursor: pointer;}
+.sub_login ul li label{margin-left: 5px; font-size: 12px; color: #2a587a; cursor: pointer;}
+.sub_login ul li label:hover{color: #5093c7;}
+
+.find{display: flex;}
+.find p{font-size: 12px;position: relative; cursor: pointer; color: #2a587a;}
+.find p:hover{color: #5093c7;}
+.find p:first-child{margin-right: 20px;}
+.find p:first-child::before{content: ""; width: 1px;height: 12px; background: #ccc; position: absolute; top: 50%;right: -10px; transform: translateY(-50%);}
+
+
+.btt{display: flex; flex-direction: column; margin-top: 10px;}
+.btt button{width: 340px;height: 50px; border: 1px solid #ccc; border-radius: 3px; font-size: 16px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
+.btt button.login_btt{margin-bottom: 10px; background: #1F8CE6; border-color: #1570bb; color: #fff;}
+.btt button.join_btt{background: #fff; color: #808991;}
+
