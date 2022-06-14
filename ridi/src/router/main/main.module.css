@@ -1,0 +1,28 @@
+.container{max-width: 1110px; margin: 0 auto;}
+
+.section1{}
+
+.top_menu{display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee;}
+.top_menu .tab{}
+.top_menu .tab ul{display: flex;}
+.top_menu .tab ul li{}
+.top_menu .tab ul li:nth-child(1){margin-right: 25px;}
+.top_menu .tab ul li em{font-size: 24px; font-weight: bold; cursor: pointer;}
+.top_menu .tab ul li.active em{color: #1EAAFF;}
+
+.category{ cursor: pointer;}
+.category ul{display: flex;}
+.category ul li{font-size: 16px;}
+.category ul li em{margin-left: 10px; font-weight: 500;}
+
+
+/* 탭1 */
+.tab_article1{}
+
+.tow_tab{}
+.tow_tab ul{display: flex;}
+.tow_tab ul li{width: 50px;height: 35px;background: #ccc; line-height: 35px; text-align: center;}
+.tow_tab ul li em{font-size: 16px; font-weight: 500;}
+
+
+

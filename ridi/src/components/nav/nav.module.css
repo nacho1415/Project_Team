@@ -1,12 +1,38 @@
-.nav{width: 100%;height: 40px;}
-.nav .container{max-width: 1110px; margin: 0 auto; display: flex; justify-content: space-between;}
+.nav{width: 100%;height: 40px; border-bottom: 1px solid rgb(235, 235, 235);}
+.container{max-width: 1110px; height: 100%; margin: 0 auto; }
 
+.menu{height: 100%; display: flex; justify-content: space-between; align-items: center;}
 .left_menu{}
-.left_menu ul{}
-.left_menu ul li{}
-.left_menu ul li em{}
+.left_menu ul{display: flex;}
+.left_menu ul li{margin-right: 30px; position: relative;}
+.left_menu ul li::before{content: "";width: 3px;height: 3px;border-radius: 50%; background: #ccc; position: absolute; top: 60%;right: -15px; transform: translateY(-50%);}
+.left_menu ul li:last-child:before{width: 0;height: 0;}
+.left_menu ul li em{font-size: 14px; font-weight: 500; color: #666; cursor: pointer; transition: all 0.2s;}
+.left_menu ul li.active em{color: #000; font-weight: bold;}
+.left_menu ul li:hover em{color: #ccc;}
 
 .right_menu{}
-.right_menu ul{}
-.right_menu ul li{}
-.right_menu ul li em{}
+.right_menu ul{display: flex;}
+.right_menu ul li{margin-left: 30px; position: relative;}
+.right_menu ul li::before{content: "";width: 3px;height: 3px;border-radius: 50%; background: #ccc; position: absolute; top: 60%;right: -15px; transform: translateY(-50%);}
+.right_menu ul li:last-child:before{width: 0;height: 0;}
+.right_menu ul li em{font-size: 14px; font-weight:500; color: #666; cursor: pointer; transition: all 0.2s;}
+.right_menu ul li:hover em{color: #ccc;}
+
+.sub_menu{width: 100%;height: 80px;background: #fff;}
+.sub_menu .container{display: flex; justify-content: space-between; align-items: center;}
+
+.logo{display: flex; cursor: pointer;}
+.logo p{font-size: 28px; font-weight: bold; letter-spacing: -0.03em; color: #1E9EFF;}
+.logo p:nth-child(2){margin-left: 5px; color: #000;}
+
+.icon{display: flex; align-items: center;}
+.search{position: relative;}
+.search input{width: 260px;height: 40px; border-radius: 5px; background: #eee; border: 1px solid transparent; padding: 0 50px; box-sizing: border-box;}
+.search input:focus {outline:none;}
+.search .search_icon1{font-size: 14px; position: absolute; top: 50%;left: 20px; transform: translateY(-50%); color: #666;}
+.search .search_icon2{font-size: 14px; position: absolute; top: 50%;right: 20px; transform: translateY(-50%); cursor: pointer; color: #666;}
+
+.sub_icon{}
+.sub_icon ul{display: flex; }
+.sub_icon ul li{font-size: 26px; margin-left: 30px; cursor: pointer; color: #666;}
