@@ -34,6 +34,8 @@ app.use(session({   // 개인마다 저장 공간의 데이터를 바꿔주는 �
 
 app.use('/', pageRouter);
 
+
+
 app.use((req, res, next) => {
     const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
     error.status = 404;
