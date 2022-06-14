@@ -37,7 +37,7 @@ const Nav = () => {
                         </div>
                         <div className={styles.right_menu}>
                             <ul>
-                                <li><em>회원가입</em></li>
+                                <li><em onClick={()=>{navigate('/join')}}>회원가입</em></li>
                                 <li><em onClick={()=>{navigate('/login')}}>로그인</em></li>
                             </ul>
                         </div>
