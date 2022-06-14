@@ -25,6 +25,10 @@ const Login = () => {
             },
             body: JSON.stringify({id:id,paw:paw})
         })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     }
     
     return (
