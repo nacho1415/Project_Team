@@ -18,7 +18,7 @@ const Login = () => {
 
     //서버로 로그인 데이터 보내기
     function onLogin(){
-        fetch('http://localhost:8080/', {
+        fetch('http://localhost:8080/login', {
             method: 'post',
             headers: {
             "Content-Type": "application/json; charset=utf-8"	
