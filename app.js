@@ -39,7 +39,8 @@ app.post('/login', async (req, res) => {
             const result = await bcrypt.compare(paw, exUser.password )
             if(result){
                 console.log(3)
-                res.json({done: true, comment: "로그인에 성공했습니다"})
+                exUser.id
+                res.json({done: true, comment: "로그인에 성공했습니다",  id: exUser.id, nickname: exUser.nickname })
                 console.log("성공확인")
             } else {
                 console.log(4)
