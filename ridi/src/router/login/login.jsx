@@ -30,7 +30,7 @@ const Login = () => {
             console.log(data)
         })
         .catch(error => {
-            console.log(error)
+            console.log("에러",error)
         })
     }
     
@@ -64,7 +64,7 @@ const Login = () => {
                         </div>
                         <div className={styles.btt}>
                             <button className={styles.login_btt} onClick={(e)=>{e.preventDefault();idCheck(); onLogin();}}>로그인</button>
-                            <button className={styles.join_btt}>회원가입</button>
+                            <button className={styles.join_btt} onClick={()=>{navigate('/join')}}>회원가입</button>
                         </div>
                     </form>
                 </div>

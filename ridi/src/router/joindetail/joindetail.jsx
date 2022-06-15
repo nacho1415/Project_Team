@@ -97,11 +97,22 @@ const Joindetail = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            navigate('/')
+            if(data.done == true){
+                navigate('/')
+            }else if(data.comment == "아이디 중복됐습니다."){
+                alert("아이디 중복 확인 되었습니다.아이디를 변경 해주세요.")
+            }else if(data.comment == "비밀번호 유효성 검사 통과 실패"){
+                alert("비밀번호를 확인해주세요.")
+            }else if(data.comment == "x 출생년도 형식이 잘못됐습니다"){
+                alert("출생년도를 형식이 잘못됐습니다.")
+            }else if(data.comment == "올바른 이메일 형식이 아닙니다."){
+                alert("이메일 주소를 확인 해주세요.")
+            }else{
+                alert("입력정보를 확인 해주세요.")
+            }
         })
         .catch(error => {
-            console.log(error)
+            console.log("에러",error)
         })
         
     }
@@ -128,12 +139,12 @@ const Joindetail = () => {
                         <p>{emailWarning}</p>
                     </div>
                     <div className={styles.user_name}>
-                        <input type="text" placeholder='이름' onChange={(e)=>{onChangeName(e);}}/>
+                        <input type="text" placeholder='이름' maxLength="3" onChange={(e)=>{onChangeName(e);}}/>
                         <p>{nameWarning}</p>
                     </div>
                     <div className={styles.user_age}>
                         <div>
-                            <input type="text" placeholder='출생년도' onChange={(e)=>{onChangeAge(e);}}/>
+                            <input type="text" placeholder='출생년도' maxLength="4" onChange={(e)=>{onChangeAge(e);}}/>
                             <p>{ageWarning}</p>
                         </div>
                         <div className={styles.gender}>
