@@ -112,9 +112,8 @@ const Joindetail = () => {
             }
         })
         .catch(error => {
-            console.log("에러",error)
-        })
-        
+            console.log("에러",error);
+        });
     }
 
     return (

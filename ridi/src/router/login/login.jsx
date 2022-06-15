@@ -27,11 +27,11 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
         })
         .catch(error => {
-            console.log("에러",error)
-        })
+            console.log("에러",error);
+        });
     }
     
     return (
