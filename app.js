@@ -40,7 +40,7 @@ app.post('/login', async (req, res) => {
             if(result){
                 console.log(3)
                 exUser.id
-                res.json({done: true, comment: "로그인에 성공했습니다",  id: exUser.id, nickname: exUser.nickname })
+                res.json({done: true, comment: "로그인에 성공했습니다", id: exUser.id, username: exUser.username })
                 console.log("성공확인")
             } else {
                 console.log(4)
