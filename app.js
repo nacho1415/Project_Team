@@ -57,7 +57,7 @@ app.post('/join', async (req, res, next) => {
     try {
         const exUser = await db.collection('User').findOne({id : userId})
         if(!exUser) {
-            let legPass =/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+            let legPass =/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+~=-])(?=.*[0-9]).{8,25}$/
             if(legPass.test(userPw)){
                 if(userAge.length == 4 && Number(userAge)){
                     var regExp =/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
