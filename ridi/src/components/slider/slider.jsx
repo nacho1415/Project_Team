@@ -13,7 +13,7 @@ const Slider = () => {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={0}
-                speed={1000}
+                speed={1500}
                 loop={true}
                 loopAdditionalSlides={1}
                 pagination={{
@@ -25,7 +25,9 @@ const Slider = () => {
             >
             <SwiperSlide>
                 <div className={`${styles.slide} slide`}>
-                    <img src={`${process.env.PUBLIC_URL}/img/slide1.jpg`} alt="" />
+                    <div className={styles.img_box}>
+                        <img src={`${process.env.PUBLIC_URL}/img/slide1.jpg`} alt="" />
+                    </div>
                     <div className={`${styles.text_box} text_box`}>
                         <ul>
                             <li><em>NEW</em></li>
@@ -39,7 +41,9 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className={`${styles.slide} slide`}>
-                    <img src={`${process.env.PUBLIC_URL}/img/slide2.jpg`} alt="" />
+                    <div className={styles.img_box}>
+                        <img src={`${process.env.PUBLIC_URL}/img/slide2.jpg`} alt="" />
+                    </div>
                     <div className={`${styles.text_box} text_box`}>
                         <ul>
                             <li><em>NEW</em></li>
@@ -53,7 +57,9 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className={`${styles.slide} slide`}>
-                    <img src={`${process.env.PUBLIC_URL}/img/slide3.jpg`} alt="" />
+                    <div className={styles.img_box}>
+                        <img src={`${process.env.PUBLIC_URL}/img/slide3.jpg`} alt="" />
+                    </div>
                     <div className={`${styles.text_box} text_box`}>
                         <ul>
                             <li><em>NEW</em></li>
@@ -67,7 +73,9 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className={`${styles.slide} slide`}>
-                    <img src={`${process.env.PUBLIC_URL}/img/slide4.jpg`} alt="" />
+                    <div className={styles.img_box}>
+                        <img src={`${process.env.PUBLIC_URL}/img/slide4.jpg`} alt="" />
+                    </div>
                     <div className={`${styles.text_box} text_box`}>
                         <ul>
                             <li><em>NEW</em></li>

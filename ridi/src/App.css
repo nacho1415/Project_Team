@@ -13,7 +13,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .swiper-slide-active .slide .text_box{transform: translateX(0);}
 .swiper-slide-prev{}
 .swiper-slide-prev .slide{}
-.swiper-slide-prev .slide img{transform: translateX(100%);}
+.swiper-slide-prev .slide img{transform: translateX(100%); transition: all 1.5s;}
 .swiper-slide-next{}
 .swiper-slide-next .slide{}
 .swiper-slide-next .slide img{}
@@ -23,3 +23,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 .swiper-button-prev:after,
 .swiper-button-next:after{font-size: 16px; font-weight: bold; color: #505050;}
+
+.swiper-pagination{color: #fff; position: absolute; bottom: 40px; left: 40%;}
+.swiper-pagination-current{font-size: 20px; }
+.swiper-pagination-total{ }
