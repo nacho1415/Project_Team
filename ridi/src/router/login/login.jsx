@@ -27,7 +27,12 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data.done == true){
+                sessionStorage.setItem("user",JSON.stringify(data));
+                navigate('/');
+            }else if(data.done == false){
+                alert("아이디와 비밀번호를 확인해주세요.")
+            }
         })
         .catch(error => {
             console.log("에러",error);

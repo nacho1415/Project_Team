@@ -9,11 +9,11 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .swiper-slide .slide{}
 
 .swiper-slide-active{}
-.swiper-slide-active .slide img{transform: translateX(0vh);}
+.swiper-slide-active .slide img{transform: translateX(0%);}
 .swiper-slide-active .slide .text_box{transform: translateX(0);}
 .swiper-slide-prev{}
 .swiper-slide-prev .slide{}
-.swiper-slide-prev .slide img{transform: translateX(100vh);}
+.swiper-slide-prev .slide img{transform: translateX(100%);}
 .swiper-slide-next{}
 .swiper-slide-next .slide{}
 .swiper-slide-next .slide img{}

@@ -4,11 +4,15 @@ import {Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch,faTimesCircle,faBell,faShoppingCart,faBook,faUser} from "@fortawesome/free-solid-svg-icons";
 import { useRef } from 'react';
+import { useEffect } from 'react';
 
 const Nav = () => {
     let navigate = useNavigate();
     let [active,setActive] = useState(0);
     let [searchInput,setSearchInput] = useState(``);
+    let getItem = sessionStorage.getItem("user");
+    getItem = JSON.parse(getItem);
+    let [logout,setLogout] = useState(false);
 
     //서버로 검색창 입력 값 데이터 보내기
     function onSearch(){
@@ -21,7 +25,14 @@ const Nav = () => {
         })
     }
 
-    
+    useEffect(()=>{
+        navigate('/')
+
+        return () => {
+            setLogout(false)
+        } 
+    },[logout])
+
     return (
         <div>
             <nav className={styles.nav}>
@@ -36,10 +47,18 @@ const Nav = () => {
                             </ul>
                         </div>
                         <div className={styles.right_menu}>
-                            <ul>
-                                <li><em onClick={()=>{navigate('/join')}}>회원가입</em></li>
-                                <li><em onClick={()=>{navigate('/login')}}>로그인</em></li>
-                            </ul>
+                                {
+                                    sessionStorage.getItem("user") ?
+                                    <ul>
+                                        <li><em>{getItem.username} 님</em></li>
+                                        <li><em onClick={()=>{sessionStorage.removeItem("user");setLogout(true)}}>로그아웃</em></li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li><em onClick={()=>{navigate('/join')}}>회원가입</em></li>
+                                        <li><em onClick={()=>{navigate('/login')}}>로그인</em></li>
+                                    </ul>
+                                }
                         </div>
                     </div>
                 </div>
