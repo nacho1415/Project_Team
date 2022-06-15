@@ -1,5 +1,8 @@
 import { Route, Routes,Link, useNavigate } from 'react-router-dom';
 import './reset.css';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import './App.css';
 import Main from './router/main/main';
 import Login from './router/login/login';
