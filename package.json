@@ -1,3 +1,4 @@
+
 {
   "name": "project",
   "version": "1.0.0",
@@ -8,6 +9,7 @@
     "nodemon": "^2.0.16"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
@@ -24,5 +26,6 @@
     "passport": "^0.6.0",
     "sequelize": "^6.20.1",
     "sequelize-cli": "^6.4.1"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }
