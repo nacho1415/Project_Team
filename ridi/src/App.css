@@ -1,2 +1,25 @@
 body{font-family: 'Noto Sans KR', sans-serif;}
 /* font-family: 'Roboto', sans-serif; */
+
+
+/* 슬라이드 */
+.swiper{border-radius: 5px; }
+.swiper-wrapper{}
+.swiper-slide{}
+.swiper-slide .slide{}
+
+.swiper-slide-active{}
+.swiper-slide-active .slide img{transform: translateX(0vh);}
+.swiper-slide-active .slide .text_box{transform: translateX(0);}
+.swiper-slide-prev{}
+.swiper-slide-prev .slide{}
+.swiper-slide-prev .slide img{transform: translateX(100vh);}
+.swiper-slide-next{}
+.swiper-slide-next .slide{}
+.swiper-slide-next .slide img{}
+
+.swiper-button-prev{width: 50px;height: 50px; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.swiper-button-next{width: 50px;height: 50px; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+
+.swiper-button-prev:after,
+.swiper-button-next:after{font-size: 16px; font-weight: bold; color: #505050;}

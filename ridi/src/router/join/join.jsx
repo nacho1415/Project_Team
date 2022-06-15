@@ -19,7 +19,7 @@ const Join = () => {
                     <button onClick={()=>{navigate('/joindetail')}}>회원가입</button>
                     <ul>
                         <li><em>14세 미만 회원가입</em></li>
-                        <li><em>이미 회원이신가요?</em></li>
+                        <li><em onClick={()=>{navigate('/login')}}>이미 회원이신가요?</em></li>
                     </ul>
                 </div>
             </section>
