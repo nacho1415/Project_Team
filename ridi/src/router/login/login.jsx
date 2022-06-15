@@ -27,11 +27,11 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log('성공', data)
+            console.log(data);
         })
         .catch(error => {
             console.log("에러",error);
-        })
+        });
     }
     
     return (
@@ -64,7 +64,7 @@ const Login = () => {
                         </div>
                         <div className={styles.btt}>
                             <button className={styles.login_btt} onClick={(e)=>{e.preventDefault();idCheck(); onLogin();}}>로그인</button>
-                            <button className={styles.join_btt}>회원가입</button>
+                            <button className={styles.join_btt} onClick={()=>{navigate('/join')}}>회원가입</button>
                         </div>
                     </form>
                 </div>
