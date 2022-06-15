@@ -27,10 +27,10 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log('성공', data)
         })
         .catch(error => {
-            console.log(error)
+            console.log("에러",error);
         })
     }
     

@@ -32,17 +32,21 @@ MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?
 app.post('/login', async (req, res) => {
     const { id, paw } = req.body
     try {
+        console.log(1)
         const exUser = await db.collection('User').findOne({id: id}); 
         if(exUser){
+            console.log(2)
             const result = await bcrypt.compare(paw, exUser.password )
-            console.log("??")
             if(result){
+                console.log(3)
                 res.json({done: true, comment: "로그인에 성공했습니다"})
                 console.log("성공확인")
             } else {
-                res.json({dont: true, comment: ""})
+                console.log(4)
+                res.json({done: false, comment: "패스워드가 일치하지 않습니다"})
             }
         } else {
+            console.log(5)
             res.json({done: false, comment: "입력하신 아이디를 다시 확인해주세요"});
         }
     } catch(e) {
@@ -72,8 +76,7 @@ app.post('/join', async (req, res, next) => {
                             gender: genderCheck
                         });
                         console.log("확인용");
-                        res.json({done: true, comment: "아이디 생성 완료"})
-                        // res.json({id: userId, username: userName, done: true, comment: "아이디 생성 완료됐습니다."});
+                        res.json({done: true, comment: "아이디 생성 완료됐습니다."});
                     }else {
                         res.json({done: false, comment: "올바른 이메일 형식이 아닙니다."})
                     }

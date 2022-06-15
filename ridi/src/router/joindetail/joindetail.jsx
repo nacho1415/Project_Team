@@ -97,11 +97,11 @@ const Joindetail = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log('성공', data)
             navigate('/')
         })
         .catch(error => {
-            console.log(error)
+            console.log('실패', error)
         })
         
     }
