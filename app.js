@@ -29,6 +29,33 @@ MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?
     });
 });
 
+app.post('/login', async (req, res) => {
+    const { id, paw } = req.body
+    try {
+        console.log(1)
+        const exUser = await db.collection('User').findOne({id: id}); 
+        if(exUser){
+            console.log(2)
+            const result = await bcrypt.compare(paw, exUser.password )
+            if(result){
+                console.log(3)
+                exUser.id
+                res.json({done: true, comment: "로그인에 성공했습니다",  id: exUser.id, nickname: exUser.nickname })
+                console.log("성공확인")
+            } else {
+                console.log(4)
+                res.json({done: false, comment: "패스워드가 일치하지 않습니다"})
+            }
+        } else {
+            console.log(5)
+            res.json({done: false, comment: "입력하신 아이디를 다시 확인해주세요"});
+        }
+    } catch(e) {
+        console.log(e);
+        res.json({ done: false ,comment: "에러처리가 안된 에러가 발생했습니다."});
+    }
+})
+
 app.post('/join', async (req, res, next) => {
 
     const { userId, userPw, userEmail, userName, userAge, genderCheck} = req.body;
@@ -68,48 +95,3 @@ app.post('/join', async (req, res, next) => {
         res.json({done: false, comment: "에러처리가 안된 에러가 발생했습니다."});
     }
 })
-
-// app.post('/login', async (req, res, next) => {
-//     const { id, paw } = req.body;
-//     try {
-//         const exUser = await db.collection('User').findOne({id : id})
-//         if(exUser) {
-//             const result = await bcrypt.compare(paw, exUser.password )
-//             if(result) {
-//                 res.json({ id: id, comment : "o 로그인이 허가되었습니다"})
-//                 req.login(exUser, () => {
-//                     console.log("sdadadaw")
-//                 })
-//                 console.log("되나");
-//             } else {
-//                 res.json({ comment : "x 비밀번호가 일치하지 않습니다" })
-//             }
-//         } else {
-//             res.json({ comment : "x 가입되지 않은 회원입니다." })
-//         }
-//     } catch(e){
-//         console.log(e)
-//     }
-// })
-
-
-// app.post('/login', async (req, res, next) => {
-
-//     const { id, paw } = req.body;
-//     try {
-//         const exUser = await db.collection('User').findOne({id : id})
-//         console.log(exUser)
-//         if(exUser) {
-//             return res.json('x 아이디 중복')
-//         }
-//         const hash = await bcrypt.hash(paw, 12);
-//         await db.collection('User').insertOne({
-//             id: id,
-//             password: hash
-//         })
-//         console.log("아이디 생성완료")
-//     }catch(e) {
-//         console.log(e)
-//         res.json("x 이유 특정 불가");
-//     }
-// })
