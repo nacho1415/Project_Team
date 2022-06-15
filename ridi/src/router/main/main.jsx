@@ -4,9 +4,11 @@ import styles from './main.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
+import Slider from '../../components/slider/slider';
 
 const Main = () => {
     let [tabActive,setTabActive] = useState(0);
+    let [towTabActive,setTowTabActive] = useState(0);
 
     return (
         <div>
@@ -32,15 +34,36 @@ const Main = () => {
                         <article className={styles.tab_article1}>
                             <div className={styles.tow_tab}>
                                 <ul>
-                                    <li><em>추천</em></li>
-                                    <li><em>로맨스</em></li>
-                                    <li><em>BL</em></li>
+                                    <li className={towTabActive == 0 ? `${styles.active}`:null}><em onClick={()=>{setTowTabActive(0)}}>추천</em></li>
+                                    <li className={towTabActive == 1 ? `${styles.active}`:null}><em onClick={()=>{setTowTabActive(1)}}>로맨스</em></li>
+                                    <li className={towTabActive == 2 ? `${styles.active}`:null}><em onClick={()=>{setTowTabActive(2)}}>BL</em></li>
+                                </ul>
+                            </div>
+                            <div className={styles.content}>
+                                <ul>
+                                    {
+                                        towTabActive == 0 ? 
+                                        <li>
+                                            <Slider></Slider>
+                                        </li>
+                                        :null
+                                    }
+                                    {
+                                        towTabActive == 1 ? 
+                                        <li>탭2</li>
+                                        :null
+                                    }
+                                    {
+                                        towTabActive == 2 ? 
+                                        <li>탭3</li>
+                                        :null
+                                    }
                                 </ul>
                             </div>
                         </article>
                         :null
                     }
-                                        {
+                    {
                         tabActive == 1 ?
                         <div>탭2</div>
                         :null
