@@ -2,10 +2,12 @@ import React from 'react';
 import Nav from '../../components/nav/nav';
 import styles from './main.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faBars } from "@fortawesome/free-solid-svg-icons";
+import {faBars,faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import Slider from '../../components/slider/slider';
-import Todayslider from '../../components/todaySlider/todayslider';
+import Slider_type2 from '../../components/slider_type2/slider_type2';
+import Slider_type3 from '../../components/slider_type3/slider_type3';
+import Slider_type4 from '../../components/slider_type4/slider_type4';
 
 const Main = () => {
     let [tabActive,setTabActive] = useState(0);
@@ -82,7 +84,36 @@ const Main = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <Todayslider></Todayslider>
+                                            <Slider_type2 title={"오늘,리디의 발견"}></Slider_type2>
+                                            <Slider_type3 title={"실시간 랭킹"}></Slider_type3>
+                                            <Slider_type2 title={"기다리면 무료로 시작해!"}></Slider_type2>
+                                            <Slider_type3 title={"베스트 셀러"}></Slider_type3>
+                                            <div className={styles.keyword_serch}>
+                                                <h2>키워드로 검색하기 <FontAwesomeIcon icon={faAngleRight} className={styles.icon} /></h2>
+                                                <ul>
+                                                    <li><em>#로맨스판타지</em></li>
+                                                    <li><em>#삼각로맨스</em></li>
+                                                    <li><em>#학원물</em></li>
+                                                    <li><em>#로맨스</em></li>
+                                                    <li><em>#성장물</em></li>
+                                                    <li><em>#사내연애</em></li>
+                                                    <li><em>#완결</em></li>
+                                                </ul>
+                                            </div>
+                                            <Slider_type2 title={"목요일 연재"}></Slider_type2>
+                                            <Slider_type2 title={"금요일 연재"}></Slider_type2>
+                                            <Slider_type2 title={"웃고 싶으면? 츄라이!"}></Slider_type2>
+                                            <Slider_type2 title={"넥스트 레벨 #로맨스판타지"}></Slider_type2>
+                                            <Slider_type2 title={"잘생기면 다야? 응 다야 #나쁜남자"}></Slider_type2>
+                                            <Slider_type2 title={"왜 너는 나를 만나서 #복수/배신"}></Slider_type2>
+                                            <Slider_type2 title={"널 위해 모든 걸 바칠 #순정남"}></Slider_type2>
+                                            <Slider_type2 title={"곤란한가요? #연하남 이 고백하면"}></Slider_type2>
+                                            <Slider_type4 title={"오직 리디에서만!"}></Slider_type4>
+                                            <Slider_type2 title={"저 세계에서 만나 #차원이동/타임슬립"}></Slider_type2>
+                                            <Slider_type2 title={"감히 사모하게 된 #시대극"}></Slider_type2>
+                                            <Slider_type2 title={"농밀하고 격정적인 #19금"}></Slider_type2>
+                                            <Slider_type2 title={"심심할 땐 리디 PICK!"}></Slider_type2>
+                                            <Slider_type2 title={"늘 짜릿한 신작! #BL"}></Slider_type2>
                                         </li>
                                         :null
                                     }

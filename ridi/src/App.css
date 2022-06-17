@@ -28,9 +28,23 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .banner_slide .swiper-pagination-current{font-size: 20px; }
 .banner_slide .swiper-pagination-total{ }
 
-/* today 슬라이드 */
-.today_slide{}
-.today_slide .swiper-button-prev{width: 35px;height: 35px; top: 40%; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
-.today_slide .swiper-button-next{width: 35px;height: 35px; top: 40%; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
-.today_slide .swiper-button-prev:after,
-.today_slide .swiper-button-next:after{font-size: 14px; font-weight: bold; color: #505050;}
+/* slider_type2 슬라이드 */
+.slider_type2 .swiper-wrapper{}
+.slider_type2 .swiper-button-prev{width: 35px;height: 35px; top: 40%; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type2 .swiper-button-next{width: 35px;height: 35px; top: 40%; background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type2 .swiper-button-prev:after,
+.slider_type2 .swiper-button-next:after{font-size: 14px; font-weight: bold; color: #505050;}
+
+/* slider_type3 슬라이드 */
+.slider_type3 .swiper-wrapper{}
+.slider_type3 .swiper-button-prev{width: 35px;height: 35px;  background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type3 .swiper-button-next{width: 35px;height: 35px;  background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type3 .swiper-button-prev:after,
+.slider_type3 .swiper-button-next:after{font-size: 14px; font-weight: bold; color: #505050;}
+
+/* slider_type4 슬라이드 */
+.slider_type4 .swiper-wrapper{}
+.slider_type4 .swiper-button-prev{width: 35px;height: 35px;  background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type4 .swiper-button-next{width: 35px;height: 35px;  background: #fff; border-radius: 50%; z-index: 1000;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.slider_type4 .swiper-button-prev:after,
+.slider_type4 .swiper-button-next:after{font-size: 14px; font-weight: bold; color: #505050;}
