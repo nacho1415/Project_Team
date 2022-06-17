@@ -20,3 +20,7 @@
 .slide_text em{display: block; color: red; margin-top: 5px;}
 .slide_text em .star_icon{ font-size: 10px;}
 .slide_text em strong{ color: #787878; font-weight: 400;}
+
+@media (max-width: 1180px){
+    .slide{width: 100%;}
+}

@@ -4,24 +4,41 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import styles from "./todayslider.module.css";
+import styles from "./slider_type2.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar,faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
-const Todayslider = () => {
+const Slider_type2 = (props) => {
     return (
-        <div className='today_slide'>
+        <div className='slider_type2'>
             <div className={styles.cotainer}>
-                <h2>오늘,리디의 발견 <FontAwesomeIcon icon={faAngleRight} className={styles.icon} /></h2>
+                <h2>{props.title} <FontAwesomeIcon icon={faAngleRight} className={styles.icon} /></h2>
                 <Swiper
                     slidesPerView={6}
                     spaceBetween={20}
                     slidesPerGroup={6}
+                    breakpoints={{
+                        1180: {
+                          slidesPerView:6,
+                          spaceBetween:20
+                        },
+                        780: {
+                            slidesPerView:4,
+                            spaceBetween:20,
+                            slidesPerGroup:4
+                        },
+                        0: {
+                            slidesPerView:3,
+                            spaceBetween:20,
+                            slidesPerGroup:3
+                        },
+                    }}
                     speed={1000}
                     loopAdditionalSlides={1}
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className="mySwiper"
+
                 >
                 <SwiperSlide>
                     <div className={`${styles.slide}`}>
@@ -173,4 +190,4 @@ const Todayslider = () => {
     );
 };
 
-export default Todayslider;
+export default Slider_type2;
