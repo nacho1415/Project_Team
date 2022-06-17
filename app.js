@@ -13,14 +13,14 @@ sequelize.sync({ force: false })
     console.log('sql 데이터베이스 연결 성공');
  })
 
-let db;
-const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
-    app.listen(8080, () => {
-        db = client.db('Ridi');
-        console.log('listening on 8080');
-    });
-});
+// let db;
+// const MongoClient = require('mongodb').MongoClient;
+// MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
+//     app.listen(8080, () => {
+//         db = client.db('Ridi');
+//         console.log('listening on 8080');
+//     });
+// });
 
 app.post('/login', async (req, res) => {
     const { id, paw } = req.body
