@@ -1,9 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-let db;
-const MongoClient = require('mongodb').MongoClient
-var url = 'mongodb://localhost:27017/DATABASE';
+// let db;
+// const MongoClient = require('mongodb').MongoClient
+// var url = 'mongodb://localhost:27017/DATABASE';
 
 router.get('/signup', (req, res) => {
     res.render('page1', { title: '데이터 전달 가능' });
@@ -23,20 +23,10 @@ router.get('/signup', (req, res) => {
 // })
 
 router.get('/page1', (req, res) => {
+    console.log("12312")
     res.render('page1', { title: '데이터 전달 가능' });
 });
 
-router.get('/page2', (req, res) => {
-    res.render('page2', { title: '데이터 전달 가능' });
-});
-
-router.get('/page3', (req, res) => {
-    res.render('page3', { title: '데이터 전달 가능' });
-});
-
-router.get('/page4', (req, res) => {
-    res.render('page4', { title: '데이터 전달 가능' });
-});
 
 router.get('/', (req, res) => {
     res.render('main', { title: '데이터 전달 가능' });
