@@ -10,18 +10,15 @@ router.post('/', async (req, res) => {
     const { id, paw } = req.body
     try {
         const exUser = await User.findOne({ where: {id: id } });
-        console.log("여긴가")
-        if(exUser){
-            const result = await bcrypt.compare(paw, exUser.password )
-            if(result){
-                res.json({done: true, comment: "로그인에 성공했습니다", id: exUser.id, username: exUser.username })
-                console.log("성공확인")
-            } else {
-                res.json({done: false, comment: "패스워드가 일치하지 않습니다"})
-            }
-        } else {
-            res.json({done: false, comment: "입력하신 아이디를 다시 확인해주세요"});
+        if(!exUser) {
+            return res.json({done: false, comment: "입력하신 아이디를 다시 확인해주세요"});
         }
+        const result = await bcrypt.compare(paw, exUser.password )
+        if(!result) {
+            return res.json({done: false, comment: "패스워드가 일치하지 않습니다"})
+        }
+        res.json({done: true, comment: "로그인에 성공했습니다", id: exUser.id, username: exUser.username })
+        console.log("성공확인")
     } catch(e) {
         console.log(e);
         res.json({ done: false ,comment: "에러처리가 안된 에러가 발생했습니다."});
