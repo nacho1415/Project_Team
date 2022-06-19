@@ -7,8 +7,13 @@ const path = require('path');
 
 const pageRouter = require('./routes/page')
 const fileRouter = require('./routes/file')
+const loginRouter = require('./routes/login')
 
 const app = express();
+
+app.get('/api', (req, res) => {
+    res.send('<h1>hello api</h1>')
+})
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -24,37 +29,16 @@ sequelize.sync({ force: false })
 
  app.use('/', pageRouter)
  app.use('/', fileRouter)
+ app.use('/login', loginRouter);
 
-let db;
-const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
-    app.listen(8080, () => {
-        db = client.db('Ridi');
-        console.log('listening on 8080');
-    });
-});
-
-app.post('/login', async (req, res) => {
-    console.log("11")
-    const { id, paw } = req.body
-    try {
-        const exUser = await User.findOne({ where: {id: id } })
-        if(exUser){
-            const result = await bcrypt.compare(paw, exUser.password )
-            if(result){
-                res.json({done: true, comment: "로그인에 성공했습니다", id: exUser.id, username: exUser.username })
-                console.log("성공확인")
-            } else {
-                res.json({done: false, comment: "패스워드가 일치하지 않습니다"})
-            }
-        } else {
-            res.json({done: false, comment: "입력하신 아이디를 다시 확인해주세요"});
-        }
-    } catch(e) {
-        console.log(e);
-        res.json({ done: false ,comment: "에러처리가 안된 에러가 발생했습니다."});
-    }
-})
+// let db;
+// const MongoClient = require('mongodb').MongoClient;
+// MongoClient.connect('mongodb+srv://minseo:lee2030@cluster0.nfdv5vj.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
+//     app.listen(8080, () => {
+//         db = client.db('Ridi');
+//         console.log('listening on 8080');
+//     });
+// });
 
 app.post('/join', async (req, res, next) => {
 
@@ -95,6 +79,9 @@ app.post('/join', async (req, res, next) => {
     }
 })
 
+app.listen(8080, () => {
+    console.log('서버 실행중!')
+})
 // var router = express.Router();
 // var mysql = require('mysql');
 // var fs = require('fs');

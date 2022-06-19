@@ -5,7 +5,6 @@ var mysql = require('mysql');
 var fs = require('fs');
 var ejs = require('ejs')
 
-
 //파일 관련 모듈S
 var multer = require('multer')
 
@@ -53,14 +52,11 @@ router.get("/filepage", function (req, res) {
     
     fs.readFile('views/file.html', 'utf-8', function (error, data) {        
         var queryString = 'select * from myfile'        
-        console.log("12213")
         getConnection().query(queryString, function (error, result) {            
-            console.log("123545")
             if (error) {                
                 console.log("파일가져올때 에러 발생" + error);                
                 return            
             }            
-            console.log("123")
             res.send(ejs.render(data, {                
                 data: result            
             }));        
