@@ -9,13 +9,13 @@ import Slider_type2 from '../../components/slider_type2/slider_type2';
 import Slider_type3 from '../../components/slider_type3/slider_type3';
 import Slider_type4 from '../../components/slider_type4/slider_type4';
 
-const Main = () => {
+const Main = (props) => {
     let [tabActive,setTabActive] = useState(0);
     let [towTabActive,setTowTabActive] = useState(0);
 
     return (
         <div>
-            <Nav></Nav>
+            <Nav title={props.title} setTilte={props.setTilte}></Nav>
             <div className={styles.container}>
                 <section className={styles.section1}>
                     <div className={styles.top_menu}>
