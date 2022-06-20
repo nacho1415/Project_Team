@@ -1,0 +1,46 @@
+.container{max-width: 1150px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;}
+
+.book_detail{display: flex;}
+.book_detail .book_img{}
+.book_detail .book_inpo{}
+
+.book_img{width: 200px;height: 290px; background: #555;}
+
+
+.book_inpo{margin-left: 35px;}
+.book_inpo .book_title{}
+
+.book_title > p{font-size: 12px;}
+.book_title > h2 {font-size: 30px;font-weight: 700;color: #333;}
+.book_title > em{font-size: 14px; display: block; color: red; margin: 10px 0;}
+.book_title > em > .star_icon{ font-size: 10px;}
+.book_title > em > strong{ color: #787878; font-weight: 400;}
+
+.book_nav{}
+.book_nav ul{display: flex;}
+.book_nav ul li{margin-right: 15px; position: relative;}
+.book_nav ul li::before{content: ">";  position: absolute; top: 50%; right: -12px; transform: translateY(-50%);}
+.book_nav ul li:last-child:before{content: "";}
+.book_nav ul li em{font-size: 12px; cursor: pointer;}
+.book_nav ul li em:hover{color: #1f8ce6;}
+
+.book_content{margin-bottom: 20px;}
+.book_content > ul{display: flex;}
+.book_content > ul > li{margin-right: 10px; position: relative;}
+.book_content > ul > li::before{content: ""; width: 1px;height: 10px; background: #ccc; position: absolute; top: 50%; right: -5px; transform: translateY(-50%);}
+.book_content > ul > li:last-child:before{width: 0;height: 0;}
+.book_content > ul > li em{font-size: 13px; font-weight: 400; color: #666;}
+.book_content > ul > li em strong{font-weight: 700;}
+
+.book_notice{box-sizing: border-box; border-top: 1px solid #ccc;}
+.book_notice ul{}
+.book_notice ul li{display: flex; align-items: center;border-bottom: 1px solid #ccc; padding:10px 0; box-sizing: border-box;}
+.book_notice ul li em{font-size: 12px; padding: 2px 10px; background: #E3EDF7; border-radius: 3px;}
+.book_notice ul li p{font-size: 14px;font-weight: 700;color: #646c73; margin-left: 10px; cursor: pointer;}
+.book_notice ul li p:hover{color: #1f8ce6;}
+.book_notice ul li:nth-child(2) em{background: #FCE8E6; color: #ed6d5e;}
+.book_notice ul li:nth-child(3) em{background: #E3E0EE; color: #605baf;}
+.book_notice ul li:nth-child(4) em{background: #EBF6FF; color: #1f8ce6;}
+.book_notice ul li:nth-child(5) em{background: #F2F2F2; color: #283241;}
+
+

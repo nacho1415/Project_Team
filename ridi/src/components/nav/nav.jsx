@@ -6,7 +6,7 @@ import { faSearch,faTimesCircle,faBell,faShoppingCart,faBook,faUser} from "@fort
 import { useRef } from 'react';
 import { useEffect } from 'react';
 
-const Nav = () => {
+const Nav = (props) => {
     let navigate = useNavigate();
     let [active,setActive] = useState(0);
     let [searchInput,setSearchInput] = useState(``);
@@ -25,14 +25,6 @@ const Nav = () => {
         })
     }
 
-    useEffect(()=>{
-        navigate('/')
-
-        return () => {
-            setLogout(false)
-        } 
-    },[logout])
-
     return (
         <div>
             <nav className={styles.nav}>
@@ -40,10 +32,10 @@ const Nav = () => {
                     <div className={styles.menu}>
                         <div className={styles.left_menu}>
                             <ul>
-                                <li className={active == 0 ? `${styles.active}`:null}><em onClick={()=>{setActive(0);navigate('/');}}>웹툰/만화</em></li>
-                                <li className={active == 1 ? `${styles.active}`:null}><em onClick={()=>{setActive(1)}}>웹소설</em></li>
-                                <li className={active == 2 ? `${styles.active}`:null}><em onClick={()=>{setActive(2)}}>도서</em></li>
-                                <li className={active == 3 ? `${styles.active}`:null}><em onClick={()=>{setActive(3)}}>셀렉트</em></li>
+                                <li className={active == 0 ? `${styles.active}`:null}><em onClick={()=>{setActive(0);navigate('/');props.setTilte(`WEBTOON`)}}>웹툰/만화</em></li>
+                                <li className={active == 1 ? `${styles.active}`:null}><em onClick={()=>{setActive(1);props.setTilte(`NOVEL`);}}>웹소설</em></li>
+                                <li className={active == 2 ? `${styles.active}`:null}><em onClick={()=>{setActive(2);props.setTilte(`BOOKS`);}}>도서</em></li>
+                                <li className={active == 3 ? `${styles.active}`:null}><em onClick={()=>{setActive(3);props.setTilte(``);}}>셀렉트</em></li>
                             </ul>
                         </div>
                         <div className={styles.right_menu}>
@@ -67,7 +59,7 @@ const Nav = () => {
                 <div className={styles.container}>
                     <div className={styles.logo}>
                         <p>RIDI</p>
-                        <p>WEBTOON</p>
+                        <p>{props.title}</p>
                     </div>
                     <div className={styles.icon}>
                         <div className={styles.search}>
