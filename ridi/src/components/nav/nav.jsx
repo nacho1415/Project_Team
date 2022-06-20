@@ -25,14 +25,6 @@ const Nav = (props) => {
         })
     }
 
-    useEffect(()=>{
-        navigate('/')
-
-        return () => {
-            setLogout(false)
-        } 
-    },[logout])
-
     return (
         <div>
             <nav className={styles.nav}>

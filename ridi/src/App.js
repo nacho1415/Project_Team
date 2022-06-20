@@ -10,6 +10,7 @@ import Nav from './components/nav/nav';
 import Join from './router/join/join';
 import Joindetail from './router/joindetail/joindetail';
 import { useState } from 'react';
+import Detail from './router/detail/detail';
 
 function App() {
   let navigate = useNavigate();
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/join' element={<Join></Join>}></Route>
         <Route path='/joindetail' element={<Joindetail></Joindetail>}></Route>
+        <Route path='/detail' element={<Detail></Detail>}></Route>
       </Routes>
     </div>
   );
