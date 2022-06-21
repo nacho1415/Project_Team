@@ -22,11 +22,6 @@ router.get('/signup', (req, res) => {
 //     })
 // })
 
-router.get('/page1', (req, res) => {
-    console.log("12312")
-    res.render('page1', { title: '데이터 전달 가능' });
-});
-
 
 router.get('/', (req, res) => {
     res.render('main', { title: '데이터 전달 가능' });
